@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandre Andorra - Senior Data Scientist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #667eea;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #5568d3;
+        }
+
+        a:visited {
+            color: #764ba2;
+        }
+
+        a:active {
+            color: #5a3a7d;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px 40px 40px;
+            text-align: center;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-text h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header-text .tagline {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            transition: background 0.3s;
+            font-size: 0.95em;
+        }
+
+        .contact-info a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .location-info {
+            margin-top: 20px;
+            font-size: 0.95em;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #2d3748;
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 50px;
+            scroll-margin-top: 60px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            color: #2d3748;
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .about-content {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 4px;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        .experience-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+
+        .experience-card h4 {
+            color: #667eea;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        .experience-card .role {
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .experience-card .date {
+            color: #718096;
+            font-size: 0.9em;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .label {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .skill-tag {
+            background: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            color: #2d3748;
+            border: 1px solid #e2e8f0;
+        }
+
+        .publication,
+        .talk,
+        .project {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+        }
+
+        .publication h4,
+        .talk h4,
+        .project h4 {
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        .publication a,
+        .talk a,
+        .project a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .publication a:hover,
+        .talk a:hover,
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        .award {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 6px;
+        }
+
+        .award h4 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: #667eea;
+            border-radius: 25px;
+            transition: background 0.3s;
+            font-size: 0.95em;
+        }
+
+        .social-links a:hover {
+            background: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            .header-text h1 {
+                font-size: 2em;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <img src="profile-photo.jpg" alt="Alexandre Andorra" class="profile-photo">
+                <div class="header-text">
+                    <h1>Alexandre Andorra</h1>
+                    <div class="tagline">Senior Applied Scientist | Bayesian ML & Probabilistic AI Specialist</div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:andorra.alexandre@gmail.com">📧 Email</a>
+                <a href="https://www.intuitivebayes.com/" target="_blank">📚 Courses</a>
+                <a href="https://www.linkedin.com/in/alex-andorra/" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/AlexAndorra" target="_blank">💻 GitHub</a>
+                <a href="https://learnbayesstats.com/" target="_blank">🎙️ Podcast</a>
+                <a href="https://topmate.io/alex_andorra" target="_blank">📅 Book a Call</a>
+            </div>
+            <div class="location-info">
+                📍 Miami, FL | 🇺🇸 US Green Card (EB1) | 🗣️ English, French, Spanish
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#talks">Talks</a></li>
+                <li><a href="#awards">Awards</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p>I'm a Senior Data Scientist with 8+ years building production probabilistic AI systems across
+                        sports analytics, pharma, and tech. I specialize in Bayesian ML, causal inference, and time
+                        series forecasting, with a proven track record of translating complex statistical models into
+                        measurable business impact.</p>
+
+                    <p>I co-founded <strong><a href="https://www.pymc-labs.com/" target="_blank">PyMC Labs</a></strong>
+                        and helped scale it from $0 to $1M profit in 2 years, serving Fortune 500 clients in
+                        pharmaceutical R&D (RNA vaccine development), agtech (crop optimization), and e-commerce. As a
+                        core contributor to <strong><a href="https://www.pymc.io/" target="_blank">PyMC</a></strong>
+                        (8K+ GitHub stars), I've implemented novel distributions and authored tutorials that serve as
+                        official documentation, educating thousands of practitioners worldwide.</p>
+
+                    <p>In 2019, I created the <strong><a href="https://learnbayesstats.com/" target="_blank">Learning
+                                Bayesian Statistics</a></strong> podcast, which has grown to 12,000 monthly listeners
+                        and ranks in the <a
+                            href="https://www.listennotes.com/podcasts/learning-bayesian-statistics-alexandre-6QgmfqXD0GI/#google_vignette"
+                            target="_blank">top 1.5% globally</a>. Through my online education platform <strong><a
+                                href="https://www.intuitivebayes.com/" target="_blank">Intuitive Bayes</a></strong>,
+                        I've trained 200+ students in probabilistic AI, generating $100K+ in revenue.</p>
+
+                    <p>Currently, I'm a Senior Applied Scientist at the <strong>Miami Marlins</strong>, where I build
+                        Bayesian forecasting models processing 50K+ tracking events per game to predict player
+                        performance and inform $100M+ roster decisions.</p>
+                </div>
+
+                <h3 style="margin-top: 40px;">Career Highlights</h3>
+                <div class="experience-highlights">
+                    <div class="experience-card">
+                        <h4>Miami Marlins</h4>
+                        <div class="role">Senior Applied Scientist</div>
+                        <div class="date">Jul 2024 – Present</div>
+                    </div>
+                    <div class="experience-card">
+                        <h4>PyMC Labs</h4>
+                        <div class="role">Principal Data Scientist & Co-founder</div>
+                        <div class="date">Mar 2021 – Jul 2024</div>
+                    </div>
+                    <div class="experience-card">
+                        <h4>Intuitive Bayes</h4>
+                        <div class="role">Co-Founder & Instructor</div>
+                        <div class="date">Jan 2021 – Present</div>
+                    </div>
+                    <div class="experience-card">
+                        <h4>Learning Bayesian Statistics</h4>
+                        <div class="role">Podcast Host & Creator</div>
+                        <div class="date">Sep 2019 – Present</div>
+                    </div>
+                    <div class="experience-card">
+                        <h4>PyMC</h4>
+                        <div class="role">Core Developer</div>
+                        <div class="date">Mar 2019 – Present</div>
+                    </div>
+                    <div class="experience-card">
+                        <h4>pollsposition.com</h4>
+                        <div class="role">Founder</div>
+                        <div class="date">Mar 2017 – Present</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="impact">
+                <h2>Key Impact & Achievements</h2>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="number">$1M</div>
+                        <div class="label">Built business from $0→$1M in 2 years</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">12K</div>
+                        <div class="label">Monthly podcast listeners</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">Top 1.5%</div>
+                        <div class="label">Global podcast ranking</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">8K+</div>
+                        <div class="label">GitHub stars for PyMC</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">$100K+</div>
+                        <div class="label">Revenue from online courses</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">200+</div>
+                        <div class="label">Students trained</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Machine Learning & AI</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Bayesian ML</span>
+                            <span class="skill-tag">Probabilistic AI</span>
+                            <span class="skill-tag">Causal Inference</span>
+                            <span class="skill-tag">Time Series</span>
+                            <span class="skill-tag">Gaussian Processes</span>
+                            <span class="skill-tag">Deep Learning</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Advanced Methods</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Hierarchical Models</span>
+                            <span class="skill-tag">Tree Models</span>
+                            <span class="skill-tag">Mixture Models</span>
+                            <span class="skill-tag">Splines</span>
+                            <span class="skill-tag">Neural Networks</span>
+                            <span class="skill-tag">Spatial Modeling</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Tools & Frameworks</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PyMC</span>
+                            <span class="skill-tag">NumPyro</span>
+                            <span class="skill-tag">JAX</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Scikit-learn</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Applied Methods</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">A/B Testing</span>
+                            <span class="skill-tag">Experimentation</span>
+                            <span class="skill-tag">Sequential Analysis</span>
+                            <span class="skill-tag">Propensity Scoring</span>
+                            <span class="skill-tag">Bayesian Optimization</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Domain Expertise</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Sports Analytics</span>
+                            <span class="skill-tag">Quantitative Research</span>
+                            <span class="skill-tag">Decision Science</span>
+                            <span class="skill-tag">Predictive Modeling</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Leadership & Communication</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Technical Teaching</span>
+                            <span class="skill-tag">Community Building</span>
+                            <span class="skill-tag">Podcasting</span>
+                            <span class="skill-tag">Open-Source Dev</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Selected Projects</h2>
+
+                <div class="project">
+                    <h4>Soccer Factor Model (2024)</h4>
+                    <p>Hierarchical Bayesian model decomposing player performance through time, into skill vs. team
+                        effects. Introduced novel metrics (Skill & Performance Above Replacement) for fair cross-player
+                        comparisons. Built interactive dashboard visualizing 1000+ player rankings with uncertainty
+                        estimates.</p>
+                    <p style="margin-top: 10px;">
+                        <a href="https://arxiv.org/abs/2412.05911" target="_blank">📄 Read Paper</a> |
+                        <a href="https://soccerfactormodel.com/" target="_blank">🌐 View Dashboard</a>
+                    </p>
+                </div>
+
+                <div class="project">
+                    <h4>PyMC Technical Documentation (2019-Present)</h4>
+                    <p>Authored 8+ comprehensive tutorials on advanced topics including Gaussian Processes (HSGP),
+                        Multilevel Modeling, Kronecker Structured Covariances, and LKJ Cholesky Priors. These tutorials
+                        have been adopted as official PyMC documentation and have educated thousands of practitioners
+                        worldwide.</p>
+                    <p style="margin-top: 10px;"><a href="https://www.pymc.io/projects/examples/en/latest/gallery.html"
+                            target="_blank">📚 View Documentation</a></p>
+                </div>
+
+                <div class="project">
+                    <h4>Intuitive Bayes - Online Education Platform (2021-Present)</h4>
+                    <p>Developed comprehensive online education platform to demystify probabilistic AI and take
+                        beginners to practitioners quickly. Created concise video lectures integrated with Python code
+                        and PyMC implementations. Trained 200+ students and generated $100K+ in revenue.</p>
+                    <p style="margin-top: 10px;"><a href="https://www.intuitivebayes.com/" target="_blank">📚 Visit
+                            Intuitive Bayes</a></p>
+                </div>
+
+                <div class="project">
+                    <h4>Electoral Forecasting Platform - pollsposition.com (2017-Present)</h4>
+                    <p>Built first French polling aggregation website using Multilevel Regression with
+                        Post-Stratification (MRP) models for French elections. Developed Gaussian Process and Hidden
+                        Markov Models to predict presidential approval ratings. Entirely open-source implementation with
+                        4K visitors/month during electoral campaigns.</p>
+                    <p style="margin-top: 10px;"><a href="https://alexandorra.github.io/pollsposition_blog/"
+                            target="_blank">🗳️ Visit Platform</a></p>
+                </div>
+            </section>
+
+            <section id="publications">
+                <h2>Publications & Papers</h2>
+
+                <div class="publication">
+                    <h4>Hidden Diversity of Threatened Sharks and Rays in the Global Meat Trade</h4>
+                    <p><em>Currently under review in Science</em></p>
+                    <p>Co-author and principal technical modeler of complex biology model evaluating hidden diversity of
+                        threatened species in global meat trade. Developed advanced bespoke Bayesian hierarchical model
+                        to evaluate conservation biology research with significant environmental impact.</p>
+                    <p style="margin-top: 10px;"><a href="https://www.biorxiv.org/content/10.1101/2025.04.24.650194v1"
+                            target="_blank">📄 Read Preprint</a></p>
+                </div>
+
+                <div class="publication">
+                    <h4>Unveiling True Talent: The Soccer Factor Model for Skill Evaluation</h4>
+                    <p><em>arXiv, 2024</em></p>
+                    <p>Developed novel hierarchical Bayesian model decomposing player performance through time, to
+                        isolate player skill from team effects. Introduced two new metrics (Skill & Performance Above
+                        Replacement) enabling fair cross-player comparisons.</p>
+                    <p style="margin-top: 10px;"><a href="https://arxiv.org/abs/2412.05911" target="_blank">📄 Read
+                            Paper</a></p>
+                </div>
+
+                <h3 style="margin-top: 30px;">Technical Blog Posts & Tutorials</h3>
+
+                <div class="publication">
+                    <h4>How popular is the President?</h4>
+                    <p>Experimenting with a Gaussian Process to model presidential popularity across time.</p>
+                    <p style="margin-top: 10px;"><a
+                            href="https://alexandorra.github.io/pollsposition_blog/popularity/macron/gaussian%20processes/polls/2021/01/18/gp-popularity.html"
+                            target="_blank">📖 Read Tutorial</a></p>
+                </div>
+
+                <div class="publication">
+                    <h4>Popularity hide and seek</h4>
+                    <p>Estimate latent presidential popularity across time with a Markov chain.</p>
+                    <p style="margin-top: 10px;"><a
+                            href="https://alexandorra.github.io/pollsposition_blog/popularity/macron/hidden%20markov%20models/polls/2021/05/16/hmm-popularity.html"
+                            target="_blank">📖 Read Tutorial</a></p>
+                </div>
+
+                <div class="publication">
+                    <h4>Gaussian Processes: HSGP Advanced Usage</h4>
+                    <p>Comprehensive guide to Hilbert Space Gaussian Processes for efficient GP approximations in PyMC.
+                    </p>
+                    <p style="margin-top: 10px;"><a
+                            href="https://www.pymc.io/projects/examples/en/latest/gaussian_processes/HSGP-Advanced.html"
+                            target="_blank">📖 Read Tutorial</a></p>
+                </div>
+
+                <div class="publication">
+                    <h4>A Primer on Bayesian Methods for Multilevel Modeling</h4>
+                    <p>In-depth introduction to hierarchical models with practical PyMC implementations.</p>
+                    <p style="margin-top: 10px;"><a
+                            href="https://www.pymc.io/projects/examples/en/latest/generalized_linear_models/multilevel_modeling.html"
+                            target="_blank">📖 Read Tutorial</a></p>
+                </div>
+
+                <div class="publication">
+                    <h4>Additional Technical Writings</h4>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><a href="https://www.pymc.io/projects/examples/en/latest/gaussian_processes/HSGP-Basic.html"
+                                target="_blank">Gaussian Processes: HSGP Reference & First Steps</a></li>
+                        <li><a href="https://www.pymc.io/projects/examples/en/latest/gaussian_processes/GP-MaunaLoa.html"
+                                target="_blank">Mauna Loa CO2 Predictions with Gaussian Processes</a></li>
+                        <li><a href="https://www.pymc.io/projects/examples/en/latest/howto/LKJ.html" target="_blank">LKJ
+                                Cholesky Correlation Priors for Multivariate Normal Models</a></li>
+                        <li><a href="https://www.pymc.io/projects/examples/en/latest/gaussian_processes/GP-Kron.html"
+                                target="_blank">Kronecker Structured Covariances</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="talks">
+                <h2>Selected Talks & Presentations</h2>
+
+                <h3>Upcoming & Recent</h3>
+
+                <div class="talk">
+                    <h4><a href="https://cfp.pydata.org/berlin2025/talk/GRZ3RG/" target="_blank">A Beginner's Guide to
+                            State Space Modeling</a></h4>
+                    <p><em>PyData Berlin 2025 (Upcoming)</em></p>
+                    <p>Introduction to state space models for time series analysis using PyMC.</p>
+                </div>
+
+                <div class="talk">
+                    <h4><a href="https://www.youtube.com/watch?v=XECLmgnS6Ng" target="_blank">A Beginner's Guide to
+                            Variational Inference</a></h4>
+                    <p><em>PyData Virginia 2025</em></p>
+                    <p>Practical introduction to variational inference methods for scalable Bayesian inference.</p>
+                </div>
+
+                <div class="talk">
+                    <h4><a href="https://www.youtube.com/watch?v=u6I5pN_Q6r4&t=1s" target="_blank">Mastering Gaussian
+                            Processes with PyMC</a></h4>
+                    <p><em>PyData NYC 2024</em></p>
+                    <p>Comprehensive tutorial on implementing and interpreting Gaussian Process models.</p>
+                </div>
+
+                <div class="talk">
+                    <h4><a href="https://www.youtube.com/watch?v=nTECQ_uvOBc&t=2s" target="_blank">Live Show at Stancon
+                            Oxford 2024</a></h4>
+                    <p><em>Stan Conference, Oxford 2024</em></p>
+                    <p>Live recording of Learning Bayesian Statistics podcast with audience participation.</p>
+                </div>
+
+                <div class="talk">
+                    <h4><a href="https://learnbayesstats.com/episode/138-quantifying-uncertainty-bayesian-deep-learning"
+                            target="_blank">Live Show at Imperial College London</a></h4>
+                    <p><em>Imperial College London</em></p>
+                    <p>Interactive discussion on Bayesian methods in research and practice.</p>
+                </div>
+
+                <h3 style="margin-top: 30px;">Podcast Appearances</h3>
+
+                <div class="talk">
+                    <h4><a href="https://statsandstories.net/sports1/learning-baseball-through-statistics"
+                            target="_blank">Learning Baseball Through Statistics</a></h4>
+                    <p><em>Stats + Stories Podcast</em></p>
+                    <p>Discussion on applying statistical methods to baseball analytics and player evaluation.</p>
+                </div>
+
+                <div class="talk">
+                    <h4><a href="https://www.superdatascience.com/podcast/sds-793-bayesian-methods-and-applications-with-alexandre-andorra"
+                            target="_blank">Bayesian Methods and Applications</a></h4>
+                    <p><em>Super Data Science Podcast</em></p>
+                    <p>Overview of Bayesian statistics applications across industries and use cases.</p>
+                </div>
+
+                <h3 style="margin-top: 30px;">Media Interviews</h3>
+
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><a href="https://medium.com/innovatorgild/advancing-bayesian-statistics-and-sports-analytics-a592678705db"
+                            target="_blank">Advancing Bayesian Statistics and Sports Analytics</a></li>
+                    <li><a href="https://www.theglobeandmail.com/investing/markets/markets-news/GetNews/31398545/harnessing-bayesian-intelligence-intuitive-bayes-redefines-predictive-analytics-in-sports-and-beyond/"
+                            target="_blank">Harnessing Bayesian Intelligence: Intuitive Bayes Redefines Predictive
+                            Analytics in Sports and
+                            Beyond</a></li>
+                    <li><a href="https://vocal.media/interview/redefining-analytics-alexandre-andorra-s-bayesian-revolution-across-sports-and-data-science"
+                            target="_blank">Redefining Analytics: Alexandre Andorra's Bayesian Revolution Across Sports
+                            and Data Science</a></li>
+                    <li><a href="https://www.periodistadigital.com/ciencia/salud/investigacion/20250130/cientifico-explica-estadistica-gestion-datos-seran-vez-determinantes-deporte-alto-rendimiento-noticia-689405056210/"
+                            target="_blank">Cómo la estadística y la gestión de datos serán cada vez más determinantes
+                            en el deporte</a> (Spanish media)</li>
+                </ul>
+            </section>
+
+            <section id="awards">
+                <h2>Awards & Recognition</h2>
+
+                <div class="award">
+                    <h4>🏆 US Green Card EB1 - Alien with Extraordinary Abilities</h4>
+                    <p>Recognized by United States government for extraordinary ability in STEM field. The EB1 category
+                        is reserved for individuals who have risen to the very top of their field of endeavor.</p>
+                </div>
+
+                <div class="award">
+                    <h4>🏆 <a
+                            href="https://www.bcs.org/membership-and-registrations/become-a-member/bcs-fellowship/bcs-fellowship-criteria/"
+                            target="_blank">Fellow Member of BCS</a>, The Chartered Institute for IT</a></h4>
+                    <p>Fellowship recognizing outstanding achievement in the field of information technology and
+                        computer science. FBCS is the highest grade of membership.</p>
+                </div>
+
+                <div class="award">
+                    <h4>🏆 <a href="https://topmate.io/topusers/cutting-edge-data-science" target="_blank">Cutting-Edge
+                            Data Science Innovator</a></h4>
+                    <p>Recognition by Topmate for innovative contributions to data science and education.</p>
+                </div>
+
+                <div class="award">
+                    <h4>📊 <a
+                            href="https://www.listennotes.com/podcasts/learning-bayesian-statistics-alexandre-6QgmfqXD0GI/#google_vignette"
+                            target="_blank">Top 1.5% Global Podcast</a></h4>
+                    <p>Learning Bayesian Statistics podcast ranks in top 1.5% of all podcasts globally (out of 3+
+                        million shows), with 12,000 monthly listeners.</p>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <h3>Let's Connect</h3>
+            <p>I'm always interested in discussing Bayesian methods, sports analytics or potential collaboration
+                opportunities -- so reach out!</p>
+            <div class="social-links">
+                <a href="mailto:andorra.alexandre@gmail.com">📧 Email Me</a>
+                <a href="https://www.intuitivebayes.com/" target="_blank">📚 Courses</a>
+                <a href="https://www.linkedin.com/in/alex-andorra/" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/AlexAndorra" target="_blank">💻 GitHub</a>
+                <a href="https://learnbayesstats.com/" target="_blank">🎙️ Podcast</a>
+                <a href="https://topmate.io/alex_andorra" target="_blank">📅 Book a Call</a>
+                <a href="https://soccerfactormodel.com/" target="_blank">⚽ Soccer Model</a>
+            </div>
+            <p style="margin-top: 30px; opacity: 0.8; font-size: 0.9em;">
+                © <span id="current-year"></span> Alexandre Andorra. All rights reserved.
+            </p>
+            <script>
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+            </script>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

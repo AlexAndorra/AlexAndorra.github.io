@@ -212,3 +212,6 @@ __marimo__/
 # Runtime directories
 fine_tuned/
 eval/
+
+# Design docs
+docs/plans/

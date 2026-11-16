@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexandre Andorra - Senior Applied Scientist</title>
+    <title>Alexandre Andorra - Machine Learning Scientist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,25 +12,25 @@
         rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #fdf9f5;
-            --bg-warm: #f7efe5;
-            --bg-teal: #e8f3f0;
-            --bg-terra-soft: #fdf0ea;
-            --charcoal: #1a2332;
-            --charcoal-light: #3b4a5a;
-            --teal: #1a6b5a;
-            --teal-dark: #155a4b;
-            --teal-light: #2d8b76;
-            --teal-bright: #28b09a;
-            --terra: #c45d3e;
-            --terra-dark: #a84e33;
-            --terra-light: #d4785e;
-            --gold: #c8912e;
-            --gold-light: #dba94e;
-            --text-primary: #292524;
-            --text-body: #44403c;
-            --text-secondary: #78716c;
-            --rule-color: #e7e0d8;
+            --bg-primary: #fbfbf7;
+            --bg-warm: #f1f3ea;
+            --bg-sage: #e8ede0;
+            --bg-terra-soft: #f8efe9;
+            --ink: #23291d;
+            --ink-soft: #4a5240;
+            --olive: #4b5a32;
+            --olive-deep: #2e3a22;
+            --olive-light: #637845;
+            --sage-bright: #b9c79d; --sage: #8e9d74;
+            --terra: #b5603e;
+            --terra-dark: #9a4f31;
+            --terra-light: #c97b5c;
+            --gold: #a88a4f;
+            --gold-light: #c0a46b;
+            --text-primary: #23291d;
+            --text-body: #3d4434;
+            --text-secondary: #6f7564;
+            --rule-color: #e2e6d8;
             --white: #ffffff;
         }
 
@@ -62,7 +62,7 @@
         }
 
         a {
-            color: var(--teal);
+            color: var(--olive);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -72,7 +72,7 @@
         }
 
         a:visited {
-            color: var(--teal);
+            color: var(--olive);
         }
 
         /* --- Layout --- */
@@ -85,7 +85,7 @@
 
         /* --- Header / Hero --- */
         header {
-            background: var(--charcoal);
+            background: var(--olive-deep);
             color: var(--white);
             padding: 72px 60px 56px;
             text-align: center;
@@ -101,8 +101,8 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(ellipse at 20% 80%, rgba(196, 93, 62, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(26, 107, 90, 0.12) 0%, transparent 50%);
+                radial-gradient(ellipse at 20% 80%, rgba(181, 96, 62, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(75, 90, 50, 0.12) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -120,16 +120,16 @@
         .profile-photo {
             width: 180px;
             height: 180px;
-            border-radius: 16px;
+            border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--teal-bright);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 0 6px rgba(34, 145, 122, 0.2);
+            border: 3px solid var(--gold);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 0 6px var(--olive-deep), 0 0 0 7.5px rgba(168, 138, 79, 0.45);
             transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s ease;
         }
 
         .profile-photo:hover {
-            transform: scale(1.04) rotate(1deg);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35), 0 0 0 8px rgba(34, 145, 122, 0.25);
+            transform: scale(1.03);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35), 0 0 0 6px var(--olive-deep), 0 0 0 7.5px rgba(168, 138, 79, 0.7);
         }
 
         .header-text h1 {
@@ -175,7 +175,7 @@
             color: var(--white);
             background: var(--terra);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(196, 93, 62, 0.35);
+            box-shadow: 0 6px 20px rgba(181, 96, 62, 0.35);
         }
 
         .location-info {
@@ -197,7 +197,7 @@
             border-bottom: 1px solid var(--rule-color);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            background: rgba(253, 249, 245, 0.92);
+            background: rgba(251, 251, 247, 0.92);
         }
 
         nav ul {
@@ -209,7 +209,7 @@
         }
 
         nav a {
-            color: var(--charcoal-light);
+            color: var(--ink-soft);
             text-decoration: none;
             font-family: 'DM Sans', sans-serif;
             font-size: 0.82rem;
@@ -260,7 +260,7 @@
 
         h2 {
             font-family: 'DM Serif Display', Georgia, serif;
-            color: var(--charcoal);
+            color: var(--ink);
             font-size: 2.3rem;
             font-weight: 400;
             margin-bottom: 32px;
@@ -272,7 +272,7 @@
         }
 
         h3 {
-            color: var(--charcoal);
+            color: var(--ink);
             font-size: 1.15rem;
             font-weight: 700;
             margin-top: 36px;
@@ -282,8 +282,8 @@
 
         /* --- About --- */
         .about-content {
-            background: var(--bg-teal);
-            border-left: 4px solid var(--teal);
+            background: var(--bg-sage);
+            border-left: 4px solid var(--olive);
             padding: 28px 32px;
             margin: 24px 0;
             border-radius: 0 10px 10px 0;
@@ -300,8 +300,8 @@
 
         .about-content a {
             font-weight: 600;
-            color: var(--teal-dark);
-            border-bottom: 1.5px solid rgba(26, 107, 90, 0.3);
+            color: var(--olive-deep);
+            border-bottom: 1.5px solid rgba(75, 90, 50, 0.3);
             transition: border-color 0.3s ease, color 0.3s ease;
         }
 
@@ -312,10 +312,22 @@
 
         /* --- Experience Cards --- */
         .experience-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 16px;
             margin-top: 24px;
+        }
+
+        .experience-highlights > .experience-card {
+            flex: 1 1 240px;
+            max-width: calc((100% - 32px) / 3);
+        }
+
+        @media (max-width: 820px) {
+            .experience-highlights > .experience-card {
+                max-width: 100%;
+            }
         }
 
         .experience-card {
@@ -323,26 +335,26 @@
             padding: 24px;
             border-radius: 10px;
             border: 1px solid var(--rule-color);
-            border-left: 4px solid var(--teal);
+            border-left: 4px solid var(--olive);
             transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         .experience-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 36px rgba(28, 25, 23, 0.1);
+            box-shadow: 0 12px 36px rgba(35, 41, 29, 0.1);
             border-left-color: var(--terra);
         }
 
         .experience-card h4 {
             font-family: 'DM Sans', sans-serif;
-            color: var(--charcoal);
+            color: var(--ink);
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 4px;
         }
 
         .experience-card .role {
-            color: var(--teal);
+            color: var(--olive);
             font-weight: 500;
             font-size: 0.92rem;
             margin-bottom: 4px;
@@ -358,13 +370,19 @@
         /* --- Stats --- */
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 16px;
             margin: 8px 0;
         }
 
+        @media (max-width: 640px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         .stat-card {
-            background: var(--charcoal);
+            background: var(--ink);
             color: var(--white);
             padding: 32px 24px;
             border-radius: 12px;
@@ -381,20 +399,20 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(196, 93, 62, 0.12) 0%, rgba(26, 107, 90, 0.08) 100%);
+            background: linear-gradient(135deg, rgba(181, 96, 62, 0.12) 0%, rgba(75, 90, 50, 0.08) 100%);
             pointer-events: none;
         }
 
         .stat-card:hover {
             transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 16px 48px rgba(28, 25, 23, 0.2);
+            box-shadow: 0 16px 48px rgba(35, 41, 29, 0.2);
         }
 
         .stat-card .number {
             font-family: 'DM Serif Display', Georgia, serif;
             font-size: 3rem;
             font-weight: 400;
-            color: var(--teal-bright);
+            color: var(--sage-bright);
             margin-bottom: 8px;
             line-height: 1;
             position: relative;
@@ -427,12 +445,12 @@
 
         .skill-category:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(28, 25, 23, 0.08);
+            box-shadow: 0 10px 30px rgba(35, 41, 29, 0.08);
         }
 
         .skill-category h4 {
             font-family: 'DM Sans', sans-serif;
-            color: var(--teal);
+            color: var(--olive);
             font-size: 0.78rem;
             font-weight: 700;
             letter-spacing: 0.12em;
@@ -447,11 +465,11 @@
         }
 
         .skill-tag {
-            background: var(--bg-teal);
+            background: var(--bg-sage);
             padding: 5px 14px;
             border-radius: 6px;
             font-size: 0.86rem;
-            color: var(--charcoal-light);
+            color: var(--ink-soft);
             border: none;
             font-weight: 400;
             transition: all 0.3s ease;
@@ -472,7 +490,7 @@
             background: var(--white);
             border-radius: 10px;
             border: 1px solid var(--rule-color);
-            border-left: 4px solid var(--teal);
+            border-left: 4px solid var(--olive);
             transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
@@ -480,7 +498,7 @@
         .talk:hover,
         .project:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 32px rgba(28, 25, 23, 0.08);
+            box-shadow: 0 10px 32px rgba(35, 41, 29, 0.08);
             border-left-color: var(--terra);
         }
 
@@ -488,7 +506,7 @@
         .talk h4,
         .project h4 {
             font-family: 'DM Sans', sans-serif;
-            color: var(--charcoal);
+            color: var(--ink);
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 6px;
@@ -504,7 +522,7 @@
         .publication a,
         .talk a,
         .project a {
-            color: var(--teal);
+            color: var(--olive);
             font-weight: 600;
         }
 
@@ -523,11 +541,11 @@
             display: inline-block;
             margin-right: 8px;
             padding: 4px 14px;
-            background: var(--bg-teal);
+            background: var(--bg-sage);
             border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 600;
-            color: var(--teal-dark);
+            color: var(--olive-deep);
             transition: all 0.3s ease;
         }
 
@@ -540,9 +558,9 @@
         .testimonial {
             margin-bottom: 32px;
             padding: 32px 36px;
-            background: linear-gradient(135deg, var(--bg-teal) 0%, var(--bg-warm) 100%);
+            background: linear-gradient(135deg, var(--bg-sage) 0%, var(--bg-warm) 100%);
             border-radius: 12px;
-            border-left: 5px solid var(--teal);
+            border-left: 5px solid var(--olive);
             position: relative;
             transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
         }
@@ -554,14 +572,14 @@
             left: 24px;
             font-family: 'DM Serif Display', Georgia, serif;
             font-size: 4rem;
-            color: var(--teal);
+            color: var(--olive);
             opacity: 0.2;
             line-height: 1;
         }
 
         .testimonial:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 36px rgba(26, 107, 90, 0.1);
+            box-shadow: 0 12px 36px rgba(75, 90, 50, 0.1);
         }
 
         .testimonial-text {
@@ -569,7 +587,7 @@
             font-style: italic;
             font-size: 1.15rem;
             line-height: 1.8;
-            color: var(--charcoal);
+            color: var(--ink);
             margin-bottom: 20px;
             padding-left: 24px;
         }
@@ -581,7 +599,7 @@
 
         .testimonial-author strong a {
             font-family: 'DM Sans', sans-serif;
-            color: var(--teal);
+            color: var(--olive);
             font-size: 1rem;
             font-weight: 700;
         }
@@ -605,19 +623,19 @@
             background: var(--white);
             border-radius: 10px;
             border: 1px solid var(--rule-color);
-            border-left: 4px solid var(--teal);
+            border-left: 4px solid var(--olive);
             transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         .award:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(28, 25, 23, 0.08);
+            box-shadow: 0 10px 30px rgba(35, 41, 29, 0.08);
             border-left-color: var(--terra);
         }
 
         .award h4 {
             font-family: 'DM Sans', sans-serif;
-            color: var(--charcoal);
+            color: var(--ink);
             font-size: 1.05rem;
             font-weight: 700;
             margin-bottom: 6px;
@@ -625,7 +643,7 @@
 
         .award a,
         .award-title {
-            color: var(--teal);
+            color: var(--olive);
         }
 
         .award a:hover {
@@ -639,7 +657,7 @@
 
         /* --- Footer --- */
         footer {
-            background: var(--charcoal);
+            background: var(--ink);
             color: rgba(255, 255, 255, 0.85);
             text-align: center;
             padding: 56px 40px;
@@ -655,8 +673,8 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(ellipse at 20% 80%, rgba(196, 93, 62, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(26, 107, 90, 0.12) 0%, transparent 50%);
+                radial-gradient(ellipse at 20% 80%, rgba(181, 96, 62, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(75, 90, 50, 0.12) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -703,7 +721,7 @@
             color: var(--white);
             background: var(--terra);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(196, 93, 62, 0.35);
+            box-shadow: 0 6px 20px rgba(181, 96, 62, 0.35);
         }
 
         .footer-copy {
@@ -773,9 +791,9 @@
         }
 
         section ul a {
-            color: var(--teal);
+            color: var(--olive);
             font-weight: 500;
-            border-bottom: 1.5px solid rgba(26, 107, 90, 0.25);
+            border-bottom: 1.5px solid rgba(75, 90, 50, 0.25);
             transition: all 0.3s ease;
         }
 
@@ -791,7 +809,7 @@
             font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--teal);
+            color: var(--olive);
             margin-top: 40px;
             margin-bottom: 20px;
             padding-bottom: 8px;
@@ -893,10 +911,11 @@
             <img src="profile-photo.jpg" alt="Alexandre Andorra" class="profile-photo">
             <div class="header-text">
                 <h1>Alexandre Andorra</h1>
-                <div class="tagline">Senior Scientist | Causal Inference & Probabilistic AI</div>
+                <div class="tagline">Machine Learning Scientist | Probabilistic ML, Causal Inference & Model Evaluation</div>
             </div>
         </div>
         <div class="contact-info">
+            <a href="cv/">CV</a>
             <a href="mailto:andorra.alexandre@gmail.com">Email</a>
             <a href="https://www.intuitivebayes.com/" target="_blank">Courses</a>
             <a href="https://www.linkedin.com/in/alex-andorra/" target="_blank">LinkedIn</a>
@@ -905,7 +924,7 @@
             <a href="https://topmate.io/alex_andorra" target="_blank">Book a Call</a>
         </div>
         <div class="location-info">
-            Palo Alto, CA &middot; US Green Card (EB1) &middot; English, French, Spanish
+            San Francisco Bay Area &middot; US Green Card (EB-1) &middot; English, French, Spanish
         </div>
     </header>
 
@@ -927,44 +946,55 @@
             <section id="about">
                 <h2 class="fade-up">About Me</h2>
                 <div class="about-content fade-up">
-                    <p>I'm a <strong>Senior Data Scientist at Meta</strong>, working on causal inference and
-                        generative models.
-                        I have 8+ years of experience building production probabilistic AI models across
-                        sports analytics, pharma, and tech. I specialize in causal inference, Bayesian ML and time
-                        series forecasting, with a proven track record of translating complex statistical models into
-                        measurable business impact.</p>
+                    <p>I'm a <strong>Data Scientist at Meta</strong>, where I lead causal measurement of the
+                        productivity impact and ROI of AI tools (coding assistants and internal agents) across
+                        Meta's family of apps. My toolkit there spans difference-in-differences, synthetic control,
+                        interrupted time series, state space models, Gaussian processes and IRT models, and the
+                        results feed exec-level AI investment decisions.</p>
+
+                    <p>I have 8+ years of experience building and evaluating production probabilistic AI systems
+                        across tech, pharma and professional sports. I specialize in Bayesian ML, causal inference,
+                        time series and rigorous model evaluation, with a proven track record of translating complex
+                        statistical models into measurable business impact.</p>
 
                     <p>I co-founded <strong><a href="https://www.pymc-labs.com/" target="_blank">PyMC Labs</a></strong>
-                        and helped scale it from $0 to $1M profit in 2 years, serving Fortune 500 clients in
+                        and helped scale it from $0 to $1M annual revenue in 2 years, making it the leading Bayesian
+                        ML consultancy and serving Fortune 500 clients in
                         pharmaceutical R&D (RNA vaccine development), agtech (crop optimization), and e-commerce. As a
                         core contributor to <strong><a href="https://www.pymc.io/" target="_blank">PyMC</a></strong>
                         (8K+ GitHub stars), I've implemented novel distributions and authored tutorials that serve as
                         official documentation, educating thousands of practitioners worldwide.</p>
 
                     <p>In 2019, I created the <strong><a href="https://learnbayesstats.com/" target="_blank">Learning
-                                Bayesian Statistics</a></strong> podcast, which has grown to 12,000 monthly listeners
-                        and ranks in the <a
+                                Bayesian Statistics</a></strong> podcast, now the largest Bayesian statistics
+                        community, with 12,000 monthly listeners, ranking in the <a
                             href="https://www.listennotes.com/podcasts/learning-bayesian-statistics-alexandre-6QgmfqXD0GI/#google_vignette"
                             target="_blank">top 1.5% globally</a>. Through my online education platform <strong><a
                                 href="https://www.intuitivebayes.com/" target="_blank">Intuitive Bayes</a></strong>,
                         I've trained 200+ students in probabilistic AI, generating $100K+ in revenue.</p>
 
-                    <p>As the Senior Applied Scientist at the Miami Marlins, I built
-                        Bayesian forecasting models processing 50K+ tracking events per game to predict player
-                        performance and inform $100M+ roster decisions.</p>
+                    <p>As the Senior Applied Scientist at the Miami Marlins, I built production
+                        Bayesian forecasting models on 1M+ tracking events to predict player performance,
+                        improving projection accuracy by 15% over baseline and informing $100M+ roster
+                        decisions.</p>
                 </div>
 
                 <h3 class="fade-up">Career Highlights</h3>
                 <div class="experience-highlights stagger-children">
                     <div class="experience-card fade-up">
+                        <h4>Meta</h4>
+                        <div class="role">Data Scientist</div>
+                        <div class="date">Apr 2026 – Present</div>
+                    </div>
+                    <div class="experience-card fade-up">
                         <h4>Miami Marlins</h4>
                         <div class="role">Senior Applied Scientist</div>
-                        <div class="date">Jul 2024 – Nov 2025</div>
+                        <div class="date">Jul 2024 – Oct 2025</div>
                     </div>
                     <div class="experience-card fade-up">
                         <h4>PyMC Labs</h4>
                         <div class="role">Principal Data Scientist & Co-founder</div>
-                        <div class="date">Mar 2021 – Present</div>
+                        <div class="date">Mar 2021 – Jul 2024</div>
                     </div>
                     <div class="experience-card fade-up">
                         <h4>Intuitive Bayes</h4>
@@ -994,7 +1024,7 @@
                 <div class="stats stagger-children">
                     <div class="stat-card fade-up">
                         <div class="number">$1M</div>
-                        <div class="label">Built business from $0 to $1M in 2 years</div>
+                        <div class="label">Annual revenue at PyMC Labs, built from $0 in 2 years</div>
                     </div>
                     <div class="stat-card fade-up">
                         <div class="number">12K</div>
@@ -1043,6 +1073,13 @@
                             <span class="skill-tag">Splines</span>
                             <span class="skill-tag">Neural Networks</span>
                             <span class="skill-tag">Spatial Modeling</span>
+                            <span class="skill-tag">Difference-in-Differences</span>
+                            <span class="skill-tag">Synthetic Control</span>
+                            <span class="skill-tag">Interrupted Time Series</span>
+                            <span class="skill-tag">State Space Models</span>
+                            <span class="skill-tag">IRT Models</span>
+                            <span class="skill-tag">Propensity Scoring</span>
+                            <span class="skill-tag">Bayesian Optimization</span>
                         </div>
                     </div>
                     <div class="skill-category fade-up">
@@ -1060,13 +1097,15 @@
                         </div>
                     </div>
                     <div class="skill-category fade-up">
-                        <h4>Applied Methods</h4>
+                        <h4>Model Evaluation</h4>
                         <div class="skill-tags">
+                            <span class="skill-tag">Proper Scoring Rules</span>
+                            <span class="skill-tag">Calibration (PIT, LOO-PIT)</span>
+                            <span class="skill-tag">LOO-CV & Model Comparison</span>
+                            <span class="skill-tag">Posterior Predictive Checks</span>
                             <span class="skill-tag">A/B Testing</span>
                             <span class="skill-tag">Experimentation</span>
                             <span class="skill-tag">Sequential Analysis</span>
-                            <span class="skill-tag">Propensity Scoring</span>
-                            <span class="skill-tag">Bayesian Optimization</span>
                         </div>
                     </div>
                     <div class="skill-category fade-up">
@@ -1100,7 +1139,7 @@
                         inference, Bayesian modeling, and probabilistic thinking. Each skill encodes expert workflows —
                         causal graph specification, identification strategies, prior selection, model diagnostics
                         — so any AI agent can guide practitioners through complex analyses.
-                        Compatible with Claude Code, Cursor, Gemini CLI, and more.</p>
+                        Compatible with Claude Code, Codex, Cursor, Gemini CLI, and more.</p>
                     <p class="project-links">
                         <a href="https://github.com/Learning-Bayesian-Statistics/baygent-skills" target="_blank">View on GitHub</a>
                     </p>
@@ -1239,6 +1278,28 @@
                 <h2 class="fade-up">Selected Talks & Presentations</h2>
 
                 <h3 class="subsection-heading fade-up">Upcoming & Recent</h3>
+
+                <div class="talk fade-up">
+                    <h4><a href="https://www.cmsaconference.com/speakers-1" target="_blank">Was It the Player or the
+                            Team? Building a Bayesian Skill Model for Soccer</a></h4>
+                    <p><em>Carnegie Mellon University, live workshop, Oct 2026</em></p>
+                    <p>Hands-on workshop building a hierarchical Bayesian model that separates player skill from team
+                        effects.</p>
+                </div>
+
+                <div class="talk fade-up">
+                    <h4><a href="https://psych.princeton.edu/news-events/2026/alexandre-andorra-senior-data-scientist"
+                            target="_blank">What Your Mixed Model Already Believes</a></h4>
+                    <p><em>Visiting Speaker Seminar, Princeton University, Sep 2026</em></p>
+                    <p>What the implicit priors of frequentist mixed models mean, and how to make them explicit.</p>
+                </div>
+
+                <div class="talk fade-up">
+                    <h4><a href="https://learnbayesstats.com/episode/amortized-bayesian-inference-gpu-computing-stan-stancon-paul-burkner-steve-bronder"
+                            target="_blank">Amortized Inference & GPUs for Stan</a></h4>
+                    <p><em>Live at StanCon, Aug 2026</em></p>
+                    <p>Live podcast recording on amortized Bayesian inference and GPU computing for Stan.</p>
+                </div>
 
                 <div class="talk fade-up">
                     <h4><a href="https://youtu.be/lXU5dr6Lmgo?si=ma9XZ4qlcNvk5kvv" target="_blank">A Beginner's Guide to

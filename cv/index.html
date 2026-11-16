@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexandre Andorra CV</title>
+<meta name="description" content="CV of Alexandre Andorra, Machine Learning Scientist: probabilistic ML, causal inference and model evaluation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=block" rel="stylesheet">
+<style>
+  :root {
+    --ink: #23291d;
+    --ink-soft: #4a5240;
+    --olive-deep: #2e3a22;
+    --olive: #4b5a32;
+    --sage: #8e9d74;
+    --sage-pale: #e4e9da;
+    --paper: #fbfbf7;
+    --brass: #a88a4f;
+    --terra: #b5603e;
+    --band-text: #eef0e4;
+  }
+
+  @page { size: Letter; margin: 0.42in 0.5in 0.42in; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9.7pt;
+    line-height: 1.38;
+    color: var(--ink);
+    background: #e9ece2;
+    font-variant-numeric: tabular-nums;
+  }
+
+  a { color: inherit; text-decoration: underline; text-decoration-color: var(--sage);
+      text-decoration-thickness: 0.6pt; text-underline-offset: 1.6pt; }
+  a:hover { color: var(--terra); }
+  a:focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
+
+  .sheet {
+    width: 8.5in;
+    margin: 32px auto 48px;
+    padding: 0.42in 0.5in;
+    background: var(--paper);
+    box-shadow: 0 1px 2px rgba(35, 41, 29, .08), 0 12px 32px rgba(35, 41, 29, .12);
+  }
+
+  .download {
+    position: fixed; top: 16px; right: 16px; z-index: 10;
+    font: 600 10.5pt 'DM Sans', sans-serif; color: var(--band-text);
+    background: var(--olive-deep); padding: 9px 16px; border-radius: 999px;
+    text-decoration: none; box-shadow: 0 6px 18px rgba(35, 41, 29, .25);
+  }
+  .download:hover { background: var(--olive); color: #fff; }
+
+  /* ---------- Header band ---------- */
+  .band {
+    position: relative;
+    background: var(--olive-deep);
+    color: var(--band-text);
+    border-radius: 10px;
+    padding: 0.24in 1.55in 0.22in 0.3in;
+    margin-bottom: 0.2in;
+  }
+  .band h1 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 30pt;
+    line-height: 1;
+    letter-spacing: 0.005em;
+    color: #fff;
+  }
+  .band .title { margin-top: 5pt; font-size: 11.5pt; font-weight: 600; color: #fff; }
+  .band .focus { font-size: 10pt; color: #cfd8bd; }
+  .band .contact { margin-top: 8pt; display: flex; flex-wrap: wrap; column-gap: 12pt; row-gap: 1pt; font-size: 8.8pt; }
+  .band .contact a { text-decoration-color: rgba(206, 216, 189, .55); }
+  .band .contact span:empty { display: none; }
+  .band .meta { color: #c4ccb4; }
+  .photo {
+    position: absolute;
+    right: 0.3in; top: 50%;
+    transform: translateY(-50%);
+    width: 1.12in; height: 1.12in;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5pt solid var(--brass);
+    box-shadow: 0 0 0 3pt var(--olive-deep), 0 0 0 3.8pt rgba(168, 138, 79, .45);
+  }
+
+  /* ---------- Sections ---------- */
+  section { margin-top: 12pt; }
+  h2 {
+    display: flex; align-items: center; gap: 8pt;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400; font-size: 13.5pt; line-height: 1.1;
+    color: var(--olive);
+    margin-bottom: 4pt;
+    break-after: avoid;
+  }
+  h2::after { content: ''; flex: 1; height: 0.8pt; background: var(--sage); opacity: .6; }
+
+  .summary { font-size: 9.6pt; line-height: 1.42; color: var(--ink); }
+  .summary strong { font-weight: 600; color: var(--olive-deep); }
+
+  .entry { margin-top: 8pt; break-inside: avoid; }
+  .entry:first-of-type { margin-top: 2pt; }
+  .head { display: flex; justify-content: space-between; align-items: baseline; gap: 10pt; }
+  .head .org { font-weight: 700; font-size: 10.4pt; }
+  .head .role { font-weight: 500; color: var(--olive); }
+  .head .when { font-size: 8.6pt; color: var(--ink-soft); white-space: nowrap; }
+
+  ul { list-style: none; margin-top: 2pt; }
+  li { position: relative; padding-left: 11pt; margin-top: 1.5pt; }
+  li::before {
+    content: ''; position: absolute; left: 1.5pt; top: 0.58em;
+    width: 4pt; height: 4pt; border-radius: 50%; background: var(--sage);
+  }
+
+  .earlier { margin-top: 5pt; color: var(--ink-soft); }
+  .earlier strong { color: var(--ink); font-weight: 600; }
+
+  .item { margin-top: 6pt; break-inside: avoid; }
+  .item:first-of-type { margin-top: 1pt; }
+  .item .name { font-weight: 700; }
+  .item .tag { color: var(--ink-soft); font-size: 8.6pt; margin-left: 6pt; }
+  .item .head { margin-bottom: 0.5pt; }
+  .item .links { font-size: 8.6pt; color: var(--ink-soft); white-space: nowrap; }
+  .item .links a + a { margin-left: 7pt; }
+
+  .talks li { margin-top: 2.5pt; }
+  .talks .venue { color: var(--ink-soft); }
+
+  .skills { display: grid; grid-template-columns: 1.3in 1fr; column-gap: 10pt; row-gap: 3pt; }
+  .skills dt { font-weight: 700; color: var(--olive-deep); }
+
+  .edu { display: grid; grid-template-columns: 1fr 1fr; column-gap: 16pt; row-gap: 2pt; }
+  .edu div strong { font-weight: 700; }
+  .edu .degree { color: var(--ink-soft); }
+
+  @media screen and (max-width: 8.9in) {
+    .sheet { width: auto; margin: 0; padding: 20px 16px 40px; box-shadow: none; }
+    .band { padding: 22px 18px 20px; }
+    .photo { position: static; transform: none; display: block; margin-bottom: 14px; width: 96px; height: 96px; }
+    .head { flex-direction: column; gap: 0; }
+    .skills, .edu { grid-template-columns: 1fr; }
+    .skills dd { margin-bottom: 4px; }
+    .download { top: auto; bottom: 16px; }
+    .item .links { white-space: normal; }
+  }
+
+  @media print {
+    body { background: none; }
+    .sheet { width: auto; margin: 0; padding: 0; box-shadow: none; background: none; }
+    .download { display: none; }
+    a:hover { color: inherit; }
+  }
+</style>
+</head>
+<body>
+<a class="download" href="Alexandre-Andorra-CV.pdf" download>Download PDF</a>
+
+<main class="sheet">
+  <header class="band">
+    <img class="photo" src="photo.jpg" alt="Portrait of Alexandre Andorra">
+    <h1>Alexandre Andorra</h1>
+    <p class="title">Machine Learning Scientist</p>
+    <p class="focus">Probabilistic ML, Causal Inference &amp; Model Evaluation</p>
+    <p class="contact">
+      <a href="mailto:andorra.alexandre@gmail.com">andorra.alexandre@gmail.com</a><span class="phone" data-private></span>
+      <a href="https://www.linkedin.com/in/alex-andorra/">LinkedIn</a>
+      <a href="https://github.com/AlexAndorra">GitHub</a>
+      <a href="https://alexandorra.github.io/">alexandorra.github.io</a>
+    </p>
+    <p class="contact meta">
+      <span>San Francisco Bay Area</span>
+      <span>US Green Card (EB-1, Extraordinary Ability)</span>
+      <span>English, French, Spanish</span>
+    </p>
+  </header>
+
+  <section>
+    <p class="summary">
+      Machine learning scientist with <strong>8+ years</strong> building and evaluating production
+      probabilistic AI systems across tech, pharma and professional sports. I specialize in
+      Bayesian ML, causal inference, time series and rigorous model evaluation. At
+      <strong>Meta</strong>, I measure the causal impact of AI tools on topline metrics across the
+      family of apps. <strong>Core contributor to PyMC</strong> (8K+ GitHub stars), co-founder of
+      <strong>PyMC Labs</strong> ($0 → $1M annual revenue in 2 years), principal modeler on a paper
+      <strong>under review in Nature</strong>, and creator of <strong>Learning Bayesian
+      Statistics</strong>, a top-1.5% global podcast.
+    </p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="head">
+        <div><span class="org">Meta</span>&ensp;<span class="role">Data Scientist</span></div>
+        <div class="when">Apr 2026 – Present, Menlo Park, CA</div>
+      </div>
+      <ul>
+        <li>Lead causal measurement of the productivity impact and ROI of AI tools — coding assistants and internal agents — on topline metrics across Meta's family of apps.</li>
+        <li>Build quasi-experimental and probabilistic models — difference-in-differences, synthetic control, interrupted time series, state space models, Gaussian processes, IRT models — to quantify AI-driven impact at scale.</li>
+        <li>Develop interpretable production forecasts and agentic decision support whose outputs are inputs to exec-level AI investment decisions.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="head">
+        <div><span class="org">Miami Marlins</span>&ensp;<span class="role">Senior Applied Scientist</span></div>
+        <div class="when">Jul 2024 – Oct 2025, Miami, FL</div>
+      </div>
+      <ul>
+        <li>Built production Bayesian forecasting models on 1M+ tracking events (Trackman, HawkEye) to predict player performance, improving projection accuracy by 15% over baseline.</li>
+        <li>Developed hierarchical time series models integrating player tracking, biomechanics and game data to inform $100M+ roster decisions.</li>
+        <li>Translated probabilistic model outputs into actionable insights for coaching staff and front office, directly influencing game strategy and player development.</li>
+        <li>Led technical education initiatives upskilling the 10-person R&amp;D team in advanced statistical methods.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="head">
+        <div><span class="org">PyMC Labs</span>&ensp;<span class="role">Principal Data Scientist &amp; Co-founder</span></div>
+        <div class="when">Mar 2021 – Jul 2024, Remote</div>
+      </div>
+      <ul>
+        <li>Co-founded and scaled the company from $0 to $1M annual revenue in 2 years (50% YoY client growth), securing 15+ enterprise contracts and establishing it as the leading Bayesian ML consultancy.</li>
+        <li>Architected production systems: Bayesian A/B testing frameworks, causal inference pipelines (treatment effects, substitution effects, backdoor adjustment), Gaussian process models for spatio-temporal forecasting.</li>
+        <li>Delivered for Fortune 500 clients in pharma R&amp;D (RNA vaccine development), agtech (crop optimization) and e-commerce (marketing attribution reaching 10M+ users), leading cross-functional teams.</li>
+        <li>Designed and delivered 40+ technical workshops training 500+ practitioners in hierarchical modeling, causal inference, time series and decision optimization.</li>
+      </ul>
+    </div>
+
+    <p class="earlier"><strong>Earlier:</strong> Data Scientist at Société.com (2020–21), 360Learning (2019–20) and Banque de France (2018–19): financial prediction models, ETL pipelines, automated financial reporting.</p>
+  </section>
+
+  <section>
+    <h2>Research &amp; Open Source</h2>
+
+    <div class="item">
+      <div class="head"><div><span class="name">Hidden Diversity of Threatened Sharks and Rays in the Global Meat Trade</span></div><span class="links"><a href="https://www.biorxiv.org/content/10.1101/2025.04.24.650194v1">bioRxiv</a></span></div>
+      <p>Co-author and principal modeler (bespoke Bayesian hierarchical model); under review in Nature.</p>
+    </div>
+
+    <div class="item">
+      <div class="head"><div><span class="name">The Soccer Factor Model</span> <span class="tag">2024 – present</span></div><span class="links"><a href="https://arxiv.org/abs/2412.05911">arXiv:2412.05911</a><a href="https://www.soccerfactormodel.com/">Dashboard</a></span></div>
+      <p>Hierarchical Bayesian model separating player skill from team effects over time; introduced Skill and Performance Above Replacement; interactive rankings of 1,000+ players with uncertainty.</p>
+    </div>
+
+    <div class="item">
+      <div class="head"><div><span class="name">PyMC</span> <span class="tag">Core developer, 2019 – present</span></div><span class="links"><a href="https://www.pymc.io">pymc.io</a><a href="https://www.pymc.io/projects/examples/en/latest/gallery.html">Gallery</a></span></div>
+      <p>Implemented the ZeroSumNormal distribution, improved the multivariate normal API and created prior helper functions. Authored 8 official tutorials (HSGP, multilevel modeling, Kronecker covariances, LKJ priors) used by thousands of practitioners.</p>
+    </div>
+
+    <div class="item">
+      <div class="head"><div><span class="name">Baygent Skills</span> <span class="tag">2026 – present</span></div><span class="links"><a href="https://github.com/Learning-Bayesian-Statistics/baygent-skills">GitHub</a></span></div>
+      <p>Open-source agent skills that teach AI coding assistants rigorous Bayesian modeling, causal inference and model evaluation; works with Claude Code, Codex, Cursor and Gemini CLI.</p>
+    </div>
+
+    <div class="item">
+      <div class="head"><div><span class="name">PollsPosition</span> <span class="tag">Electoral forecasting</span></div><span class="links"><a href="https://alexandorra.github.io/pollsposition_blog/about/">Blog</a></span></div>
+      <p>First French polling aggregator, built on MRP models, with GP and HMM models of presidential approval; fully open source; 4K visitors/month during campaigns.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Teaching &amp; Community</h2>
+
+    <div class="item">
+      <div class="head"><div><span class="name"><a href="https://learnbayesstats.com">Learning Bayesian Statistics</a></span> <span class="tag">Creator &amp; host, 2019 – present</span></div></div>
+      <p>Top-1.5% global podcast and the largest Bayesian statistics community: 12K monthly listeners, 165+ episodes, 100+ paid community members. Currently hosting a 12-episode series on reinforcement learning.</p>
+    </div>
+
+    <div class="item">
+      <div class="head"><div><span class="name"><a href="https://www.intuitivebayes.com">Intuitive Bayes</a></span> <span class="tag">Co-founder &amp; instructor, 2021 – present</span></div></div>
+      <p>Online platform teaching probabilistic AI to 200+ students ($100K+ revenue).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected Talks</h2>
+    <ul class="talks">
+      <li><a href="https://www.cmsaconference.com/speakers-1">Was It the Player or the Team? Building a Bayesian Skill Model for Soccer</a> <span class="venue">— Carnegie Mellon University, live workshop, Oct 2026</span></li>
+      <li><a href="https://psych.princeton.edu/news-events/2026/alexandre-andorra-senior-data-scientist">What Your Mixed Model Already Believes</a> <span class="venue">— Visiting Speaker Seminar, Princeton University, Sep 2026</span></li>
+      <li><a href="https://learnbayesstats.com/episode/amortized-bayesian-inference-gpu-computing-stan-stancon-paul-burkner-steve-bronder">Amortized Inference &amp; GPUs for Stan</a> <span class="venue">— live at StanCon, Aug 2026</span></li>
+      <li><a href="https://youtu.be/lXU5dr6Lmgo?si=b44VX3I5V9C8CYX7">A Beginner's Guide to State Space Modeling</a> <span class="venue">— PyData Berlin, 2025</span></li>
+      <li><a href="https://youtu.be/u6I5pN_Q6r4?si=6pij0QbC8zu9HLYr">Mastering Gaussian Processes with PyMC</a> <span class="venue">— PyData NYC, 2024</span></li>
+      <li><a href="https://learnbayesstats.com/episode/118-exploring-the-future-of-stan-with-charles-margossian-brian-ward">Live podcast show</a> <span class="venue">— StanCon Oxford, 2024</span></li>
+      <li>Guest on <a href="https://statsandstories.net/sports1/learning-baseball-through-statistics">Stats + Stories</a> and the <a href="https://www.superdatascience.com/podcast/sds-793-bayesian-methods-and-applications-with-alexandre-andorra">Super Data Science podcast</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Model evaluation</dt>
+      <dd>Proper scoring rules, calibration (PIT, LOO-PIT), LOO-CV and model comparison, posterior predictive checks, A/B testing and experimentation, sequential analysis</dd>
+      <dt>Causal inference</dt>
+      <dd>Difference-in-differences, synthetic control, interrupted time series, propensity scoring, backdoor adjustment, DAGs</dd>
+      <dt>Machine learning</dt>
+      <dd>Bayesian ML, probabilistic AI, hierarchical models, Gaussian processes, state space models, IRT, Bayesian optimization, deep neural networks, AI agents</dd>
+      <dt>Tools</dt>
+      <dd>Python, PyMC, NumPyro, JAX, PyTorch, TensorFlow, NumPy, pandas, scikit-learn</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="edu">
+      <div><strong>HEC Paris</strong> <span class="degree">— MSc, Management</span></div>
+      <div><strong>Freie Universität Berlin</strong> <span class="degree">— MSc, Public Policy</span></div>
+      <div><strong>Université Paris-Sorbonne</strong> <span class="degree">— BSc, History</span></div>
+      <div><strong>Causal AI</strong> <span class="degree">— Robert Osazuwa Ness, Microsoft Research</span></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

@@ -6,7 +6,7 @@ import pytest
 from pypdf import PdfReader
 
 # Any international/US-style phone number (no real digits hardcoded in the repo).
-PHONE_RE = re.compile(r"\+?\d{1,3}[\s.-]?\(?\d{2,4}\)?[\s.-]\d{2,4}[\s.-]\d{2,4}")
+PHONE_RE = re.compile(r"(?:\+?\d{1,3}[\s.-]?)?\(?\d{2,4}\)?[\s.-]\d{2,4}[\s.-]\d{2,4}")
 
 # Every hyperlink in the source CV (Google Doc / docx), plus the email.
 # Matched as prefixes so tracking params (?si=...) don't matter.
@@ -126,6 +126,13 @@ def test_committed_pdf_is_two_pages(committed_pdf):
     assert len(PdfReader(committed_pdf).pages) == 2
 
 
+def test_committed_pdf_matches_current_html(public_pdf, committed_pdf):
+    """The downloadable PDF must be rebuilt whenever cv/index.html changes."""
+    def norm(pdf):
+        return " ".join(pdf_text(pdf).split())
+    assert norm(committed_pdf) == norm(public_pdf), "run: uv run --no-project tools/build_cv.py"
+
+
 def test_phone_regex_catches_phones():
     assert PHONE_RE.search("+33 612 345 678")
     assert PHONE_RE.search("(415) 555-0100")
@@ -137,6 +144,7 @@ def test_baygent_leads_research_section(public_pdf):
     start = re.search(r"^\s*research & open source", text, re.M).end()
     names = ["baygent skills", "hidden diversity", "soccer factor model", "pymc", "pollsposition"]
     first = {n: text.find(n, start) for n in names}
+    assert all(pos >= 0 for pos in first.values()), first  # every project must be present
     assert min(first, key=first.get) == "baygent skills", first
 
 

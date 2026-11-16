@@ -130,3 +130,15 @@ def test_phone_regex_catches_phones():
     assert PHONE_RE.search("+33 612 345 678")
     assert PHONE_RE.search("(415) 555-0100")
     assert not PHONE_RE.search("Apr 2026 – Present, 1M+ tracking events, 2412.05911")
+
+
+def test_baygent_leads_research_section(public_pdf):
+    text = pdf_text(public_pdf).lower()
+    start = re.search(r"^\s*research & open source", text, re.M).end()
+    names = ["baygent skills", "hidden diversity", "soccer factor model", "pymc", "pollsposition"]
+    first = {n: text.find(n, start) for n in names}
+    assert min(first, key=first.get) == "baygent skills", first
+
+
+def test_green_card_category(public_pdf):
+    assert "EB-1A" in pdf_text(public_pdf)

@@ -20,7 +20,7 @@ def test_site_stale_facts_absent(site, stale):
     "San Francisco Bay Area", "Data Scientist at Meta", "1M+ tracking events", "Oct 2025",
     "Mar 2021 – Jul 2024", "annual revenue", "Carnegie Mellon", "Princeton", "StanCon",
     'href="cv/"', "Model Evaluation", "TensorFlow", "Deep Learning", "--olive: #4b5a32",
-    "synthetic control", "Codex",
+    "synthetic control", "Codex", "US Green Card (EB-1A)",
 ])
 def test_site_new_facts_present(site, fact):
     assert fact in site
